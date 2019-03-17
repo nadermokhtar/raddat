@@ -1,6 +1,7 @@
 class HookupsController < ApplicationController
 
   def index
+    @hookups = Hookup.all
   end
 
   def new
@@ -10,20 +11,17 @@ class HookupsController < ApplicationController
   def create
     @hookup = Hookup.create(hookup_params)
 
-
     redirect_to @hookup
-
   end
 
   def show
     @hookup = Hookup.find(params[:id])
-
   end
 
   private
 
- def hookup_params
-  params.require(:hookup).permit(:title, :url)
-end
+  def hookup_params
+    params.require(:hookup).permit(:title, :url)
+  end
 
 end

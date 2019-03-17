@@ -1,1 +1,6 @@
+<%@hookups.each do |hookup|%>
+<li>
+  <%= link_to hookup.title, hookup.url %> 
+  </li>
+<%end%>
 <%= link_to "Submit a new hookup", new_hookup_path %>
